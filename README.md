@@ -84,6 +84,7 @@ services:
       - SUBDOMAINS=subdomain1,subdomain2
       - TOKEN=token
       - LOG_FILE=false #optional
+      - IPV6=dual #choose between false, dual or only
     volumes:
       - /path/to/appdata/config:/config #optional
     restart: unless-stopped
@@ -100,6 +101,7 @@ docker run -d \
   -e SUBDOMAINS=subdomain1,subdomain2 \
   -e TOKEN=token \
   -e LOG_FILE=false `#optional` \
+  -e IPV6=dual `#choose between false, dual or only` \
   -v /path/to/appdata/config:/config `#optional` \
   --restart unless-stopped \
   lscr.io/linuxserver/duckdns:latest
@@ -118,6 +120,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e SUBDOMAINS=subdomain1,subdomain2` | multiple subdomains allowed, comma separated, no spaces |
 | `-e TOKEN=token` | DuckDNS token |
 | `-e LOG_FILE=false` | Set to `true` to log to file (also need to map /config). |
+| `-e IPV6=dual` | Set to `false` to only update the ipv4, `dual` for both and `only` for ipv6 only. |
 | `-v /config` | Used in conjunction with logging to file. |
 
 ## Environment variables from files (Docker secrets)
