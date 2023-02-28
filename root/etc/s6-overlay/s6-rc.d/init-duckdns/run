@@ -2,10 +2,10 @@
 
 #Check to make sure the subdomain and token are set
 if [ -z "${SUBDOMAINS}" ] || [ -z "${TOKEN}" ] || [ -z "${IPV6}" ]; then
-    echo "Please pass both your subdomain(s) and token as environment variables in your docker run command. See the readme for more details."
+    echo "Please pass your subdomain(s), token and IPV6 setting as environment variables in your docker run command. See the readme for more details."
     sleep infinity
 else
-    echo "Retrieving subdomain and token from the environment variables"
+    echo "Retrieving subdomain, token and ipv6 setting from the environment variables"
     echo -e "SUBDOMAINS=\"${SUBDOMAINS}\" TOKEN=\"${TOKEN}\" IPV6=\"${IPV6}\"" >/app/duck.conf
 fi
 
