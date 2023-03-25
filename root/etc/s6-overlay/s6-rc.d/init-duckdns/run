@@ -1,20 +1,10 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
 
 #Check to make sure the subdomain and token are set
 if [ -z "${SUBDOMAINS}" ] || [ -z "${TOKEN}" ] || [ -z "${IPV6}" ]; then
-    echo "Please pass your subdomain(s), token and IPV6 setting as environment variables in your docker run command. See the readme for more details."
+    echo "Please pass both your subdomain(s), token and ipv6 setting as environment variables in your docker run command. See the readme for more details."
     sleep infinity
-else
-    echo "Retrieving subdomain, token and ipv6 setting from the environment variables"
-    echo -e "SUBDOMAINS=\"${SUBDOMAINS}\" TOKEN=\"${TOKEN}\" IPV6=\"${IPV6}\"" >/app/duck.conf
-fi
-
-# modify crontab if logging to file
-if [ "${LOG_FILE}" = "true" ]; then
-    crontab -u abc /defaults/duckcron
-    echo "log will be output to file"
-else
-    echo "log will be output to docker log"
 fi
 
 # permissions
