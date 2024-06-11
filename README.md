@@ -1,4 +1,4 @@
-This is a Fork of https://github.com/linuxserver/docker-duckdns which i modified to add Dual-Stack support and ipv6 only support.
+This is a Fork of https://github.com/linuxserver/docker-duckdns which i modified to add Dual-Stack support and ipv6 only support, without the need of a dns query.
 
 This is just meant to be a personal fork for my servers, but if you need the modification, i gladly share it. Otherwise head over to https://github.com/linuxserver/docker-duckdns
 
