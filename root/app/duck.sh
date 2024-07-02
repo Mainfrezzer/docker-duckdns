@@ -17,7 +17,7 @@ then
 	ipv6addr=$(curl -s -6 "https://ifconfig.io")
 	RESPONSE=$(curl -sS --max-time 60 "https://www.duckdns.org/update?domains=${SUBDOMAINS}&token=${TOKEN}&ip=${ipv4addr}&ipv6=${ipv6addr}")
 	if [ "${RESPONSE}" = "OK" ]; then
-		echo "Your IP was updated at $(date)"
+		echo "Your IP ${ipv4addr} & ${ipv6addr} was updated at $(date)"
 	else
 		echo -e "Something went wrong, please check your settings $(date)\nThe response returned was:\n${RESPONSE}"
 	fi
@@ -28,7 +28,7 @@ then
 	ipv6addr=$(curl -s -6 "https://ifconfig.io")
 	RESPONSE=$(curl -sS --max-time 60 "https://www.duckdns.org/update?domains=${SUBDOMAINS}&token=${TOKEN}&ipv6=${ipv6addr}")
 	if [ "${RESPONSE}" = "OK" ]; then
-		echo "Your IP was updated at $(date)"
+		echo "Your IP ${ipv6addr} was updated at $(date)"
 	else
 		echo -e "Something went wrong, please check your settings $(date)\nThe response returned was:\n${RESPONSE}"
 	fi
@@ -37,7 +37,7 @@ else
 {
     RESPONSE=$(curl -sS --max-time 60 "https://www.duckdns.org/update?domains=${SUBDOMAINS}&token=${TOKEN}&ip=")
     if [ "${RESPONSE}" = "OK" ]; then
-        echo "Your IP was updated at $(date)"
+        echo "Your IP ${ipv4addr} was updated at $(date)"
     else
         echo -e "Something went wrong, please check your settings $(date)\nThe response returned was:\n${RESPONSE}"
     fi
