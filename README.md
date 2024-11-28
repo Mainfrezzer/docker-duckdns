@@ -2,6 +2,11 @@ This is a Fork of https://github.com/linuxserver/docker-duckdns which i modified
 
 This is just meant to be a personal fork for my servers, but if you need the modification, i gladly share it. Otherwise head over to https://github.com/linuxserver/docker-duckdns
 
+**Dont forget, if the container is running on a bridge, it needs ipv6 support. For simplicity sake, you can just run it on the Host** 
+<br/><sub>thanks to punkidow for reminding me :D</sub>
+
+
+
 ## Application Setup
 
 - Go to the [duckdns website](https://duckdns.org/), register your subdomain(s) and retrieve your token
