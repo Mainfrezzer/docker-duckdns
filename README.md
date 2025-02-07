@@ -26,6 +26,7 @@ services:
   duckdns:
     image: mainfrezzer/duckdns:latest
     container_name: duckdns
+    network_mode: host
     environment:
       - PUID=1000 #optional
       - PGID=1000 #optional
@@ -43,6 +44,7 @@ services:
 
 ```bash
 docker run -d \
+  --net=host \
   --name=duckdns \
   -e PUID=1000 `#optional` \
   -e PGID=1000 `#optional` \
