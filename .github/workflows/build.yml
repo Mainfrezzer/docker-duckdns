@@ -57,8 +57,10 @@ jobs:
             linux/arm64                    
           push: true
           tags: |
-            magnon.ovh/${{ steps.meta.outputs.REPO }}/${{ steps.meta.outputs.REPO_NAME }}:${{ steps.meta.outputs.REPO_VERSION }}
-            magnon.ovh/${{ steps.meta.outputs.REPO }}/${{ steps.meta.outputs.REPO_NAME }}:${{ env.DOCKER_LATEST }}
+            ${{ steps.meta.outputs.REPO }}/${{ steps.meta.outputs.REPO_NAME }}:${{ steps.meta.outputs.REPO_VERSION }}
+            ${{ steps.meta.outputs.REPO }}/${{ steps.meta.outputs.REPO_NAME }}:${{ env.DOCKER_LATEST }}
+            ghcr.io/${{ steps.meta.outputs.REPO }}/${{ steps.meta.outputs.REPO_NAME }}:${{ steps.meta.outputs.REPO_VERSION }}
+            ghcr.io/${{ steps.meta.outputs.REPO }}/${{ steps.meta.outputs.REPO_NAME }}:${{ env.DOCKER_LATEST }}
           labels: |
             LABEL org.opencontainers.image.authors="Mainfrezzer"
             LABEL org.opencontainers.image.source="https://github.com/Mainfrezzer/docker-duckdns-Dual-Stack-Support"
