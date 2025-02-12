@@ -2,8 +2,7 @@ name: release-tag
 
 on:
   release:
-  types: [published]
-  #push
+    types: [published]
 
 jobs:
   release-image:
