@@ -24,7 +24,7 @@ Here are some example snippets to help you get started creating a container.
 version: "2.1"
 services:
   duckdns:
-    image: mainfrezzer/duckdns:latest
+    image: ghcr.io/mainfrezzer/duckdns:latest
     container_name: duckdns
     network_mode: host
     environment:
@@ -55,7 +55,7 @@ docker run -d \
   -e IPV6=dual `#choose between false, dual or only` \
   -v /path/to/appdata/config:/config `#optional` \
   --restart unless-stopped \
-  mainfrezzer/duckdns:latest
+  ghcr.io/mainfrezzer/duckdns:latest
 
 ```
 
